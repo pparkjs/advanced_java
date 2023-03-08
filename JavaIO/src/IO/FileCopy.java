@@ -55,10 +55,9 @@ public class FileCopy {
 			
 			int data;
 				
-			int c; // 읽어온 데이터를 저장할 변수
-			while((c=fin.read()) != -1) {
+			while((data = fin.read()) != -1) {
 				// 읽어온 데이터를 복사본_펭귄.jpg에 담아준다.
-				fout.write(c);
+				fout.write(data);
 			}
 			fout.flush();
 			
