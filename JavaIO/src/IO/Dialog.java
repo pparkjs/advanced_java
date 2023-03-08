@@ -31,7 +31,11 @@ public class Dialog {
 		
 		//확장자 목록에 '모든 파일' 목록을 표시할지 여부 설정
 //		chooser.setAcceptAllFileFilterUsed(false);
-		chooser.setAcceptAllFileFilterUsed(true); //기본값
+//		chooser.setAcceptAllFileFilterUsed(true); //기본값
+		
+		//Dialog창이 나타날 때 기본적으로 보여줄 기본 경로 설정하기
+		chooser.setCurrentDirectory(new File("d:/d_other"));
+		
 		
 		
 		//Dialog창 나타내기 ( 열기용과 저장용을 구분해서 나타낸다.)
