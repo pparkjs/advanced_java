@@ -9,7 +9,7 @@ import java.sql.Statement;
 import java.util.Scanner;
 
 //문제 ) Lprod_id값을 2개를 입력 받아서
-//       두 값 중 작은 값부터 큰 값 사이의 자료들을 출력하시오.
+//       두 값 중 작은 값부터 큰 값 사이의 자료들을 출력하시오..
 public class JdbcTest03 {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
