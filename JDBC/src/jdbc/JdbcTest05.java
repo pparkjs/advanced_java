@@ -30,10 +30,14 @@ public class JdbcTest05 {
 		ResultSet resultSet = null;
 
 		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-
-			conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "PJS98", "java");
-
+//			Class.forName("oracle.jdbc.driver.OracleDriver");
+//
+//			conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "PJS98", "java");
+			
+			//따로 만든 DBUtil클래스에서 호출
+			conn = DBUtil.getConnetion();
+			
+			
 			while (true) {
 				System.out.print("lprod_gu 입력 >> ");
 				gu = scan.next();
@@ -80,8 +84,8 @@ public class JdbcTest05 {
 				System.out.println("상품 등록 실패");
 			}
 
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
+//		} catch (ClassNotFoundException e) {
+//			e.printStackTrace();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
