@@ -56,8 +56,8 @@ public class JdbcTest03 {
 			e.printStackTrace();
 		}finally {
 			if(resultSet!=null) try {resultSet.close();}catch(SQLException e) {}
-			if(state!=null) try {resultSet.close();}catch(SQLException e) {}
-			if(conn!=null) try {resultSet.close();}catch(SQLException e) {}
+			if(state!=null) try {state.close();}catch(SQLException e) {}
+			if(conn!=null) try {conn.close();}catch(SQLException e) {}
 		}
 	}
 }
