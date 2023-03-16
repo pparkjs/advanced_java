@@ -23,7 +23,7 @@ public class FileCopy {
 			return;
 		}
 		
-		File targetDir = new File("d:/d_other/연습용");
+		File targetDir = new File("d:/d_othefr/연습용");
 		if(!targetDir.exists()) {  // 저장할 폴더가 없으면...
 			targetDir.mkdirs();
 		}
