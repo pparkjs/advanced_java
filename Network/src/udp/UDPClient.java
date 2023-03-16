@@ -43,7 +43,7 @@ public class UDPClient {
 				// 수신용 패킷 생성
 				inpacket = new DatagramPacket(bMsg,bMsg.length);
 				
-				// 수신
+				// 수신cd
 				socket.receive(inpacket);
 				
 //				String receiveMsg = new String(bMsg, 0, inpacket.getLength(), "utf-8"); //방법 1
