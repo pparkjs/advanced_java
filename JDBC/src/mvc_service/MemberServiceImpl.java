@@ -1,6 +1,7 @@
 package mvc_service;
 
 import java.util.List;
+import java.util.Map;
 
 import mvc_dao.IMemberDAO;
 import mvc_dao.MemberDAOImpl;
@@ -40,6 +41,19 @@ public class MemberServiceImpl implements IMemberService{
 	@Override
 	public int getMemberCount(String memId) {
 		return dao.getMemberCount(memId);
+	}
+	
+
+	@Override
+	public int updateMember3(Map<String, String> dataMap) {
+		return dao.updateMember3(dataMap);
+	}
+
+
+	@Override
+	public int updateMember2(Map<String, String> paramMap) {
+		// TODO Auto-generated method stub
+		return dao.updateMember2(paramMap);
 	}
 
 

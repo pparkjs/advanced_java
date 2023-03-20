@@ -1,6 +1,7 @@
 package mvc_service;
 
 import java.util.List;
+import java.util.Map;
 
 import mvc_vo.MemberVO;
 
@@ -53,4 +54,21 @@ public interface IMemberService {
 	 * @return 검색된 회원ID의 개수
 	 */
 	public int getMemberCount(String memId);
+	
+	/**
+	 * 매개변수로 받은 Map을 이용하여 회원 정보 중 원하는 컬럼을 수정하는 메서드 ==> 수정 항목이 1개
+	 * Map의 정보 ==> key값 : 수정할컬럼명(field), 수정할 데이터(data), 검색할 회원ID(memId)
+	 * 
+	 * @return 작업 성공 : 1, 작업 실패 : 0
+	 */
+	public int updateMember2(Map<String, String> paramMap);
+	
+	/**
+	 * 원하는 항목을 수정하는 메서드 - 수정항목이 여러개....
+	 * Map의 정보 ==> key값 : 수정할 컬럼명(검색할 ID는 'memId') , value값 : 수정할 데이터값 (검색할 ID값 포함)
+	 * 
+	 * @param dataMap 수정할 정보가 저장된 Map객체
+	 * @return 작업성공 : 1, 작업 실패 : 0
+	 */
+	public int updateMember3(Map<String, String> dataMap);
 }
