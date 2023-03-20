@@ -15,7 +15,7 @@ public class MemberController {
 
 	public MemberController() {
 		scan = new Scanner(System.in);
-		service = new MemberServiceImpl(); //Service 객체 생성
+		service = MemberServiceImpl.getInstance(); //Service 객체 생성
 	}
 
 	public static void main(String[] args) {
