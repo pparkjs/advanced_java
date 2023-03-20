@@ -13,7 +13,20 @@ import jdbc.DBUtil3;
 import mvc_vo.MemberVO;
 
 public class MemberDAOImpl implements IMemberDAO {
-
+	// 1번
+	private static MemberDAOImpl dao;
+	
+	// 2번
+	private MemberDAOImpl(){
+		System.out.println("DAO생성자 입니다.");
+	}
+	
+	// 3번
+	public static MemberDAOImpl getInstance() {
+		if(dao==null) dao = new MemberDAOImpl();
+		return dao;
+	}
+	
 	@Override
 	public int insertMember(MemberVO memVo) {
 		Connection conn = null;
