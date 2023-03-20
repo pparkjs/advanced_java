@@ -10,11 +10,18 @@ import mvc_vo.MemberVO;
 public class MemberServiceImpl implements IMemberService{
 	// 일을 시킬 DAO객체 변수 선언
 	private IMemberDAO dao;
+	// 1번
+	private static MemberServiceImpl service;
 	
-	//생성자
-	public MemberServiceImpl() {
+	// 2번 생성자
+	private MemberServiceImpl() {
 	//선언은 인터페이스로 하고 실제 객체 생성은 자식인 클래스로 해라
-		dao = new MemberDAOImpl(); // DAO객체 생성
+		dao = MemberDAOImpl.getInstance(); // DAO객체 생성
+	}
+	// 3번
+	public static MemberServiceImpl getInstance() {
+		if(service==null) service = new MemberServiceImpl();
+		return service;
 	}
 	
 	
