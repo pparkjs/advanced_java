@@ -8,7 +8,7 @@ import mvc_dao.MemberDAOImpl;
 import mvc_vo.MemberVO;
 
 public class MemberServiceImpl implements IMemberService{
-	// 일을 시킬 DAO객체 변수 선언
+	// 일을 시킬 DAO객체 변수 선언!
 	private IMemberDAO dao;
 	// 1번
 	private static MemberServiceImpl service;
