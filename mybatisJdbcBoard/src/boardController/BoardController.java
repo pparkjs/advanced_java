@@ -1,4 +1,4 @@
-package boardcontroller;
+package boardController;
 
 import java.util.ArrayList;
 import java.util.List;
