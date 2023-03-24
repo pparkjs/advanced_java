@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper 
+	 PUBLIC "-//mybatis.org//DTD Mapper 3.0/EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="member">
+
+	<insert id="insertMember" parameterType="memberVo">
+		insert into mymember (mem_id, mem_pass, mem_name, mem_tel, mem_addr)
+		values(#{mem_id}, #{mem_pass}, #{mem_name}, #{mem_tel}, #{mem_addr})
+	</insert>
+	
+	<select id="getMemberCount" parameterType="String" resultType="int">
+		select count(*) cnt from mymember where mem_id = #{mem_id}
+	</select>
+	
+	<delete id="deleteMember" parameterType="String">
+		delete from mymember where mem_id = #{mem_id}
+	</delete>
+	
+	<select id="getAllMember" resultType="memberVo">
+		select * from mymember
+	</select>
+	
+	<update id="updateMember" parameterType="memberVo">
+		update mymember 
+			set mem_pass = #{mem_pass}, mem_name = #{mem_name},
+			 mem_tel = #{mem_tel}, mem_addr = #{mem_addr} where mem_id = #{mem_id}
+	</update>
+	
+	<update id="updateMember2" parameterType="Map">
+	<!-- Map꺼 가지고 오고싶으면 ${}안에key값 쓰면 value가져오고 
+		""가 없이 가져와짐 컬럼명 가져올 수 있음
+		#{}안에 key값 쓰면 value가져오고 ""를 같이 가져옴
+	 -->
+	
+	<!-- 
+		Map을 파라미터로 받아서 처리할 때 변수명 역할은 Map의 "key값"으로 한다.
+		
+		파라미터로 가져온 값을'컬럼명'등의 자리에서 사용할 경우에는 
+		샾(#) 대신 달러($)기호를 사용해서 나타낸다.
+		예) ${변수명} 또는 ${key값}
+	 -->
+		update mymember set ${field} = #{data} where mem_id = #{memId}
+	</update>
+	
+	<!-- 
+		Map의 정보 -> key값 : 수정할 컬럼명, value값 : 해당 컬럼의 수정할 값
+					  key값 : memId          value값 :  수정할 회원ID
+	 -->
+	<update id="updateMember3">
+		update mymember
+			<set>
+	<!-- 		<if test="key 조건연산자 값"> 조건 만족하면 여기실행 </if> -->
+				<if test="mem_pass != null"> mem_pass = #{mem_pass},</if>
+				<if test="mem_name != null"> mem_name = #{mem_name},</if>
+				<if test="mem_tel != null"> mem_tel = #{mem_tel},</if>
+				<if test="mem_addr != null"> mem_addr = #{mem_addr}</if>
+			</set>
+		where mem_id = #{memId}
+	</update>
+	
+</mapper>
