@@ -16,6 +16,7 @@
 	<!-- typeAlias 설정하기 -->
 	<typeAliases>
 		<typeAlias type="basic.LprodVO" alias="lprodVo"/>
+		<typeAlias type="memberVO.MemberVO" alias="memberVo"/>
 	</typeAliases>
 	
 	<!-- DB연결 설정하기 -->
@@ -37,6 +38,7 @@
 	<mappers>
 		<mapper resource="mapper/lprod-mapper.xml"/>
 		<mapper resource="mapper/jdbc-mapper.xml"/>
+		<mapper resource="mapper/member-mapper.xml"/>
 		
 	</mappers>
 	
