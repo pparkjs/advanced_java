@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper 
+	 PUBLIC "-//mybatis.org//DTD Mapper 3.0/EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="fileinfo">
+	<insert id="insertFileinfo" parameterType="fileVo">
+		insert into fileinfo
+			(file_no, file_writer, origin_file_name, save_file_name, file_size, file_date)
+		values (fileinfo_seq.nextval, #{file_writer}, #{origin_file_name},
+		         #{save_file_name}, #{file_size}, sysdate)
+	</insert>
+	
+	<select id="getAllFileinfo" resultType="fileVo">
+		select * from fileinfo
+	</select>
+	
+	<!-- 주어진 파일 번호와 일치하는 파일 정보 가져오기 -->
+	<select id="getFileinfo" parameterType="int" resultType="fileVo">
+		select * from fileinfo where file_no = #{file_no}
+	</select>
+	
+	
+</mapper>
