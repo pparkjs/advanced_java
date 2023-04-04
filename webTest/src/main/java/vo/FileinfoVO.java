@@ -5,7 +5,7 @@ public class FileinfoVO {
 	private String file_writer;
 	private String origin_file_name;
 	private String save_file_name;
-	private int file_size;
+	private long file_size;
 	private String file_date;
 	public int getFile_no() {
 		return file_no;
@@ -31,10 +31,10 @@ public class FileinfoVO {
 	public void setSave_file_name(String save_file_name) {
 		this.save_file_name = save_file_name;
 	}
-	public int getFile_size() {
+	public long getFile_size() {
 		return file_size;
 	}
-	public void setFile_size(int file_size) {
+	public void setFile_size(long file_size) {
 		this.file_size = file_size;
 	}
 	public String getFile_date() {
