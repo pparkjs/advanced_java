@@ -17,6 +17,7 @@
 	<typeAliases>
 		<typeAlias type="memberVO.MemberVO" alias="memberVo"/>
 		<typeAlias type="json.LprodVO" alias="lprodVo"/>
+		<typeAlias type="vo.FileinfoVO" alias="fileVo"/>
 	</typeAliases>
 	
 	<!-- DB연결 설정하기 -->
@@ -38,6 +39,7 @@
 	<mappers>
 		<mapper resource="mapper/member-mapper.xml"/>
 		<mapper resource="mapper/lprod-mapper.xml"/>
+		<mapper resource="mapper/fileinfo-mapper.xml"/>
 	</mappers>
 	
 </configuration>
